@@ -1,9 +1,10 @@
-﻿@model IQueryable<Product>;
-@foreach (var p in Model)
+﻿@model SportStore.Models.ViewModels.ProductListViewModel
+@foreach (var p in Model.Products)
 {
-	<h3>@p.Name</h3>
-	@p.Description
-	<h4>@p.Price.ToString("c")</h4>
+	<partial name="ProductSummary" model="p"/>	
 }
-<h4>Welcome to SportStore</h4>
+
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" 
+	 page-class="btn" page-class-normal="btn-outline-dark" page-class-selected="btn-primary"
+	 class="btn-group pull-right m-1"></div>
 

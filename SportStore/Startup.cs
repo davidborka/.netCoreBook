@@ -12,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 using SportStore.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SportStore
 {
@@ -44,6 +45,8 @@ namespace SportStore
 
 			app.UseEndpoints(endpoints =>
 			{
+				endpoints.MapControllerRoute("pagination", "Products/Page{productPage}",
+					new { Controller = "Home", action = "Index" });
 				endpoints.MapDefaultControllerRoute();
 			});
 			SeedData.EnsurePopulated(app);
