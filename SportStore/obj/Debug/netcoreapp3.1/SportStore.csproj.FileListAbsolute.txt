@@ -146,3 +146,4 @@ D:\Projects\.netbook\SportStores\SportStore\obj\Debug\netcoreapp3.1\SportStore.c
 D:\Projects\.netbook\SportStores\SportStore\obj\Debug\netcoreapp3.1\SportStore.MvcApplicationPartsAssemblyInfo.cache
 D:\Projects\.netbook\SportStores\SportStore\bin\Debug\netcoreapp3.1\libman.json
 D:\Projects\.netbook\SportStores\SportStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ProductSummary.cshtml.g.cs
+D:\Projects\.netbook\SportStores\SportStore\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\NavigationMenu\Default.cshtml.g.cs

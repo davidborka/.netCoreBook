@@ -213,3 +213,4 @@ D:\Projects\.netbook\SportStores\SportStore.Test\bin\Debug\netcoreapp3.1\runtime
 D:\Projects\.netbook\SportStores\SportStore.Test\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\Projects\.netbook\SportStores\SportStore.Test\bin\Debug\netcoreapp3.1\SportStore.dll
 D:\Projects\.netbook\SportStores\SportStore.Test\bin\Debug\netcoreapp3.1\SportStore.pdb
+D:\Projects\.netbook\SportStores\SportStore.Test\bin\Debug\netcoreapp3.1\libman.json
