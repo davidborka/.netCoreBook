@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
@@ -30,25 +31,25 @@ namespace Platform
 			{
 				app.UseDeveloperExceptionPage();
 			}
-
-			app.Map("/branch", branch =>
-			{
-				branch.Run(new QueryStringMiddleware().Invoke);
-				branch.Run(async (context) =>
-				{
-					await context.Response.WriteAsync($"Branch Midleware");
-				});
-			});
-			app.UseMiddleware<QueryStringMiddleware>();
-			app.UseMiddleware<LocationMidleware>();
+			//app.UseMiddleware<Population>();
+			//app.UseMiddleware<Capital>();
 			app.UseRouting();	
 			app.UseEndpoints(endpoints =>
 			{
-				endpoints.MapGet("/", async context =>
+				endpoints.MapGet("{first}/{second}/{third}", async context =>
 				{
-					await context.Response.WriteAsync("Hello World!");
+					await context.Response.WriteAsync("Request was routed");
+					foreach (var kvp in context.Request.RouteValues)
+					{
+						await context.Response.WriteAsync($"{kvp.Key}: {kvp.Value} \n");
+					}
 				});
+				endpoints.MapGet("capital/{country:alpha}", Capital.Endpoint);
+				endpoints.MapGet("size/{city?}", Population.Endpoint).WithMetadata(new RouteNameMetadata("population"));
+	
 			});
+
+			
 		}
 	}
 }
